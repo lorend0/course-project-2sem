@@ -1,0 +1,613 @@
+@import '../../css/fonts.css';
+
+$container-padding: 0px;
+$header-height: 60px;
+$primary-color: #0061df;
+$text-color: #000;
+$background-color: aliceblue;
+$footer-bg: #023056;
+$footer-text: #d5e7f4;
+
+@mixin flex-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+@mixin flex-between {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+:root {
+	--container-padding: #{$container-padding};
+	--header-height: #{$header-height};
+}
+
+.container {
+	width: 100%;
+	max-width: 1440px;
+	margin: 0 auto;
+	padding: 0 var(--container-padding);
+}
+
+@media (max-width: 1440px) {
+	:root {
+		--container-padding: 15px;
+	}
+}
+
+@media (max-width: 1024px) {
+	:root {
+		--container-padding: 10px;
+	}
+}
+
+@media (max-width: 768px) {
+	:root {
+		--container-padding: 15px;
+	}
+}
+
+@media (max-width: 480px) {
+	:root {
+		--container-padding: 10px;
+	}
+}
+
+html {
+	scroll-behavior: smooth;
+	overflow-x: hidden;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: 'Gotham', Arial, sans-serif;
+	background: #fff;
+	color: $text-color;
+	background-color: $background-color;
+	opacity: 1;
+	transition: opacity 0.3s ease-in-out;
+}
+
+@keyframes slide-in-left {
+	from {
+		transform: translateX(-500%);
+		opacity: 0;
+	}
+	to {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+@keyframes slide-in-right {
+	from {
+		transform: translateX(500%);
+		opacity: 0;
+	}
+	to {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+// Header
+.header {
+	padding: 0 var(--container-padding);
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: var(--header-height);
+	background-color: rgba(255, 255, 255, 0.9);
+	backdrop-filter: blur(10px);
+	z-index: 1000;
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.048);
+
+	&__content {
+		@include flex-between;
+		height: 100%;
+	}
+
+	&__logo {
+		width: 118px;
+		height: 60px;
+		background: url('/image/logo2.svg') no-repeat center/contain;
+	}
+
+	&__nav {
+		@include flex-center;
+	}
+
+	&__menu-toggle {
+		display: none;
+		background: none;
+		border: none;
+		cursor: pointer;
+		padding: 10px;
+		z-index: 1001;
+
+		span {
+			display: block;
+			width: 25px;
+			height: 2px;
+			background-color: black;
+			margin: 5px 0;
+			transition: 0.3s;
+		}
+	}
+
+	&__nav-links {
+		display: flex;
+		gap: 28px;
+	}
+
+	&__link {
+		font-size: 16px;
+		font-weight: 400;
+		color: black;
+		text-decoration: none;
+		transition: color 0.3s;
+
+		&:hover {
+			color: $primary-color;
+		}
+	}
+}
+
+// Gallery Images
+.tenerife-gallery {
+	&-image1,
+	&-image2,
+	&-image3 {
+		opacity: 0;
+		animation-fill-mode: forwards;
+		animation-timing-function: ease-out;
+	}
+
+	&-image3 {
+		animation-name: slide-in-left;
+		animation-duration: 0.5s;
+		animation-delay: 0.2s;
+	}
+
+	&-image2 {
+		animation-name: slide-in-left;
+		animation-duration: 0.5s;
+		animation-delay: 0.1s;
+	}
+
+	&-image1 {
+		animation-name: slide-in-right;
+		animation-duration: 0.5s;
+		animation-delay: 0.3s;
+	}
+}
+
+// Hero Section
+.tenerife-hero {
+	height: 700px;
+	position: relative;
+	width: 1440px;
+	margin: 0 auto;
+	margin-bottom: 50px;
+}
+
+.tenerife-title {
+	position: absolute;
+	top: -110px;
+	left: 275px;
+	font-size: 60px;
+	color: $text-color;
+	font-family: 'Gotham', Arial, sans-serif;
+	font-weight: 500;
+	line-height: 72px;
+}
+
+.tenerife-gallery {
+	margin-top: 220px;
+	display: flex;
+	gap: 25px;
+	position: relative;
+	left: 230px;
+	position: static;
+	justify-content: center;
+	align-items: flex-start;
+
+	&-left {
+		display: flex;
+		flex-direction: column;
+		gap: 25px;
+	}
+
+	&-image1 {
+		width: 304px;
+		height: 509px;
+		border-radius: 30px;
+		object-fit: cover;
+	}
+
+	&-image2 {
+		width: 551px;
+		height: 254px;
+		border-radius: 30px;
+		object-fit: cover;
+	}
+
+	&-image3 {
+		width: 551px;
+		height: 232px;
+		border-radius: 30px;
+		object-fit: cover;
+	}
+}
+
+.tenerife-welcome {
+	position: relative;
+	top: -100px;
+	font-size: 40px;
+	line-height: 72px;
+	color: $text-color;
+	font-family: 'Gotham', Arial, sans-serif;
+	font-weight: 500;
+	text-align: center;
+	margin-bottom: 150px;
+}
+
+.tenerife-hotels-title {
+	color: #fff;
+	border-radius: 30px;
+	padding: 40px 0;
+	margin-bottom: 60px;
+	font-size: 80px;
+	font-family: 'Gotham', Arial, sans-serif;
+	font-weight: 700;
+	text-align: center;
+}
+
+// Hotel Cards
+.tenerife-hotel {
+	&-card--group6,
+	&-card--group4,
+	&-card--group5 {
+		width: 703px;
+		height: 418px;
+		border-radius: 20px;
+		overflow: hidden;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		margin-bottom: 10px;
+		background: none;
+		transition: all 0.3s ease;
+	}
+
+	&-image-group6,
+	&-image-group4,
+	&-image-group5 {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border-radius: 20px;
+		z-index: 1;
+	}
+
+	&-gradient-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 100%);
+		opacity: 0.5;
+		border-radius: 20px;
+		z-index: 2;
+	}
+
+	&-content {
+		position: relative;
+		z-index: 3;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		padding: 0 0 33px 40px;
+	}
+
+	&-title-group6 {
+		font-size: 33px;
+		font-family: 'Gotham', Arial, sans-serif;
+		font-weight: 500;
+		color: #fff;
+		margin-bottom: 13px;
+		line-height: 40px;
+		max-width: 80%;
+	}
+
+	&-address-group6 {
+		display: flex;
+		align-items: center;
+		font-size: 13px;
+		font-family: 'Gotham', Arial, sans-serif;
+		font-weight: 400;
+		color: #fff;
+		background: none;
+		margin-top: 7px;
+	}
+
+	&-location-icon {
+		width: 17px;
+		height: 21px;
+		margin-right: 7px;
+	}
+}
+
+// Resort Card
+.resort-card {
+	&__button:hover {
+		background-color: #fff;
+		color: #000;
+		font-weight: 500;
+	}
+
+	&:hover {
+		transform: scale(1.05);
+	}
+}
+
+// Popular Resorts
+.popular-resorts {
+	position: relative;
+	margin-top: -150px;
+	margin-bottom: 150px;
+
+	&__cards {
+		flex-direction: column;
+		align-items: center;
+		gap: 40px;
+		display: flex;
+	}
+}
+
+.tenerife-hotels-bar-wrapper {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	margin-bottom: 10px;
+}
+
+.tenerife-hotels-bar {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 100vw;
+	height: 600px;
+	z-index: -1;
+	margin-top: -1200px;
+}
+
+a {
+	text-decoration: none;
+}
+
+// Footer
+.footer {
+	width: 100%;
+	padding: 50px var(--container-padding);
+	background: $footer-bg;
+	color: $footer-text;
+
+	&__content {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: 30px;
+		max-width: 1160px;
+		margin: 0 auto;
+	}
+
+	&__column {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	&__label,
+	&__value {
+		font-size: clamp(14px, 1.5vw, 18px);
+		font-weight: 100;
+	}
+
+	&__social {
+		display: flex;
+		gap: 20px;
+		justify-content: center;
+		margin-top: 20px;
+	}
+
+	&__icon1,
+	&__icon2,
+	&__icon3 {
+		width: clamp(24px, 3vw, 30px);
+		height: clamp(24px, 3vw, 30px);
+		cursor: pointer;
+		transition: transform 0.3s ease;
+
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.footer {
+		&__content {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		&__social {
+			margin-top: 0;
+			justify-content: flex-end;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.header {
+		height: 50px;
+
+		&__logo {
+			width: 90px;
+			height: 45px;
+		}
+
+		&__nav-links {
+			padding: 60px 0;
+		}
+
+		&__link {
+			font-size: 20px;
+			padding: 15px 0;
+		}
+	}
+
+	.tenerife-hotel {
+		&-address-group6 {
+			font-size: 12px;
+		}
+
+		&-content {
+			padding: 0 0 20px 20px;
+		}
+
+		&-location-icon {
+			width: 14px;
+			height: 18px;
+		}
+	}
+
+	.tenerife-hero {
+		width: 100%;
+		height: auto;
+		padding: 0 15px;
+	}
+
+	.tenerife-title {
+		position: relative;
+		top: 80px;
+		left: 0;
+		font-size: 36px;
+		line-height: 44px;
+		text-align: center;
+		margin-bottom: 20px;
+	}
+
+	.tenerife-gallery {
+		flex-direction: column;
+		margin-top: 120px;
+		left: 0;
+		padding: 0 15px;
+
+		&-left {
+			width: 100%;
+		}
+
+		&-image1,
+		&-image2,
+		&-image3 {
+			width: 100%;
+			height: auto;
+			aspect-ratio: 16/9;
+		}
+	}
+
+	.tenerife-welcome {
+		font-size: 24px;
+		line-height: 36px;
+		padding: 0 15px;
+		margin-bottom: 100px;
+		margin-top: 150px;
+	}
+
+	.popular-resorts2 {
+		margin-top: 60px;
+	}
+
+	.popular-resorts__cards2 {
+		padding: 0 15px;
+	}
+
+	.tenerife-hotel-card--group6,
+	.tenerife-hotel-card--group4,
+	.tenerife-hotel-card--group5 {
+		width: 350px;
+		height: 300px;
+	}
+
+	.tenerife-hotel-title-group6 {
+		font-size: 24px;
+		line-height: 32px;
+	}
+
+	.tenerife-hotels-bar {
+		height: 400px;
+		margin-top: -800px;
+	}
+
+	.footer {
+		padding: 30px 15px;
+
+		&__content {
+			grid-template-columns: 1fr;
+			text-align: center;
+		}
+
+		&__social {
+			justify-content: center;
+			margin-top: 20px;
+		}
+	}
+}
+
+@media (max-width: 480px) {
+	.tenerife-title {
+		font-size: 28px;
+		line-height: 36px;
+		top: 60px;
+	}
+
+	.tenerife-welcome {
+		font-size: 20px;
+		line-height: 30px;
+		margin-bottom: 200px;
+	}
+
+	.tenerife-hotel-card--group6,
+	.tenerife-hotel-card--group4,
+	.tenerife-hotel-card--group5 {
+		height: 250px;
+	}
+
+	.tenerife-hotel-title-group6 {
+		font-size: 20px;
+		line-height: 28px;
+	}
+
+	.footer {
+		&__label,
+		&__value {
+			font-size: 14px;
+		}
+	}
+}

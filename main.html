@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+		/>
+		<title>Spain Resorts</title>
+		<link
+			rel="preload"
+			href="fonts/GothaProLig.otf"
+			as="font"
+			type="font/otf"
+			crossorigin
+		/>
+		<link
+			rel="preload"
+			href="fonts/GothaProMed.otf"
+			as="font"
+			type="font/otf"
+			crossorigin
+		/>
+		<link
+			rel="preload"
+			href="fonts/GothaProBol.otf"
+			as="font"
+			type="font/otf"
+			crossorigin
+		/>
+		<link rel="stylesheet" href="css/main.css" />
+		<link rel="shortcut icon" href="image/logovkladka.png" />
+		<link
+			rel="stylesheet"
+			href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+		/>
+		<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+		<script src="js/map.js"></script>
+	</head>
+	<body>
+		<!-- Header -->
+		<header class="header">
+			<div class="container">
+				<div class="header__content">
+					<a href="main.html">
+						<div class="header__logo"></div>
+					</a>
+					<nav class="header__nav">
+						<button class="header__menu-toggle" aria-label="Toggle menu">
+							<span></span>
+							<span></span>
+							<span></span>
+						</button>
+						<div class="header__nav-links">
+							<a href="#" class="header__link">ГЛАВНАЯ</a>
+							<a href="#resorts" class="header__link">КУРОРТЫ</a>
+							<a href="main.html#contacts" class="header__link">ОТЗЫВЫ</a>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</header>
+		<!-- Hero Section -->
+		<section class="hero">
+			<div class="hero__background"></div>
+			<div class="hero__image"></div>
+			<div class="hero__overlay"></div>
+			<h1 class="hero__title">ЗАКАЖИТЕ СВОЮ ИСТОРИЮ <br />ПОД РИТМ ГИТАР</h1>
+			<p class="hero__subtitle">
+				БОЛЕЕ 20 САМЫХ ПОПУЛЯРНЫХ <br />КУРОРТОВ ПО ВСЕЙ ИСПАНИИ
+			</p>
+			<form action="order.html">
+				<button class="hero__button">ЗАКАЗАТЬ</button>
+			</form>
+		</section>
+
+		<!-- Why Spain Section -->
+		<section class="whyspain-section">
+			<div class="whyspain-images">
+				<img src="image/image.jpg" class="whyspain-img1" />
+				<img src="image/image13.jpg" class="whyspain-img2" />
+				<img src="image/image12.jpg" class="whyspain-img3" />
+			</div>
+			<div class="whyspain-content">
+				<div class="whyspain-title">ПОЧЕМУ<br />ИСПАНИЯ?</div>
+				<div class="whyspain-text">
+					Пляжи Испании известны своей великолепной природой и
+					высококачественным сервисом. Большинство курортов Испании расположены
+					на побережье, что даёт возможность наслаждаться морем и солнцем
+					круглый год. Тут вы найдёте множество водных развлечений и активных
+					видов спорта.
+				</div>
+			</div>
+		</section>
+		<section class="why-spain">
+			<div class="why-spain__feature">
+				<div class="why-spain__feature-text">
+					<h3>ОТДЫХ <br />НА МОРЕ</h3>
+					<p>
+						Большинство курортов Испании расположены на побережье, что дает
+						возможность наслаждаться морем и солнцем круглый год.
+						Средиземноморское побережье Испании предлагает множество уникальных
+						мест для отдыха. Здесь вас ждет сочетание пляжного отдыха и
+						развлечений.
+					</p>
+				</div>
+				<div class="why-spain__feature-image"></div>
+			</div>
+			<div class="why-spain__gallery">
+				<button
+					class="gallery-arrow gallery-arrow--left"
+					aria-label="Previous image"
+				>
+					<svg
+						width="24"
+						height="24"
+						viewBox="0 0 24 24"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<path
+							d="M15 18L9 12L15 6"
+							stroke="white"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+						/>
+					</svg>
+				</button>
+				<div class="slider-container">
+					<div class="slider-track">
+						<img
+							src="image/image17.jpg"
+							class="why-spain__gallery-image"
+							alt="Resort 1"
+						/>
+						<img
+							src="image/imae19.jpg"
+							class="why-spain__gallery-image"
+							alt="Resort 2"
+						/>
+						<img
+							src="image/image20.jpg"
+							class="why-spain__gallery-image"
+							alt="Resort 3"
+						/>
+						<img
+							src="image/image44.jpg"
+							class="why-spain__gallery-image"
+							alt="Resort 4"
+						/>
+						<img
+							src="image/image45.jpg"
+							class="why-spain__gallery-image"
+							alt="Resort 5"
+						/>
+					</div>
+				</div>
+				<button
+					class="gallery-arrow gallery-arrow--right"
+					aria-label="Next image"
+				>
+					<svg
+						width="24"
+						height="24"
+						viewBox="0 0 24 24"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<path
+							d="M9 6L15 12L9 18"
+							stroke="white"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+						/>
+					</svg>
+				</button>
+			</div>
+		</section>
+
+		<!-- Popular Resorts Section -->
+		<section class="popular-resorts">
+			<h2 id="resorts" class="popular-resorts__title">
+				Самые популярные<br />курорты Испании
+			</h2>
+			<div class="popular-resorts__cards">
+				<div class="resort-card">
+					<div class="resort-card__image"></div>
+					<div class="resort-card__overlay"></div>
+					<div class="resort-card__name1"><p>Ибица</p></div>
+					<form action="ibiza.html" method="get">
+						<button class="resort-card__button" href="ibiza.html">
+							СМОТРЕТЬ
+						</button>
+					</form>
+				</div>
+				<div class="resort-card">
+					<div class="resort-card__image2"></div>
+					<div class="resort-card__overlay"></div>
+					<div class="resort-card__name2"><p>Тенерифе</p></div>
+					<form action="tenerife.html">
+						<button class="resort-card__button">СМОТРЕТЬ</button>
+					</form>
+				</div>
+				<div class="resort-card">
+					<div class="resort-card__image3"></div>
+					<div class="resort-card__overlay"></div>
+					<div class="resort-card__name3"><p>Майорка</p></div>
+					<form action="mayorka.html">
+						<button class="resort-card__button">СМОТРЕТЬ</button>
+					</form>
+				</div>
+			</div>
+		</section>
+
+		<!-- Info Section -->
+		<section class="info">
+			<p class="info__text">
+				Выгодные цены, развитая инфраструктура и теплое гостеприимство местных
+				жителей делают Испанию идеальным выбором для отпуска мечты в любое время
+				года. Откройте её для себя — здесь каждый найдет свой идеальный отдых!
+			</p>
+		</section>
+
+		<!-- Map Section -->
+		<section class="map-section">
+			<h2 class="map-section__title">Наши курорты на карте</h2>
+			<div class="map-container">
+				<div id="map" class="map"></div>
+				<div class="map-markers">
+					<div
+						class="map-marker"
+						data-lat="38.9087"
+						data-lng="1.4329"
+						data-title="Ибица"
+					>
+						<div class="map-marker__icon"></div>
+						<div class="map-marker__tooltip">Ибица</div>
+					</div>
+					<div
+						class="map-marker"
+						data-lat="28.2916"
+						data-lng="-16.6291"
+						data-title="Тенерифе"
+					>
+						<div class="map-marker__icon"></div>
+						<div class="map-marker__tooltip">Тенерифе</div>
+					</div>
+					<div
+						class="map-marker"
+						data-lat="39.6953"
+						data-lng="3.0176"
+						data-title="Майорка"
+					>
+						<div class="map-marker__icon"></div>
+						<div class="map-marker__tooltip">Майорка</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Testimonials Section -->
+		<section class="testimonials">
+			<h2 class="testimonials__title">Отзывы наших клиентов</h2>
+			<div class="testimonials__container">
+				<div class="testimonial-card">
+					<div class="testimonial-card__image">
+						<svg
+							fill="#000000"
+							version="1.1"
+							id="Layer_1"
+							xmlns="http://www.w3.org/2000/svg"
+							xmlns:xlink="http://www.w3.org/1999/xlink"
+							width="800px"
+							height="800px"
+							viewBox="796 796 200 200"
+							enable-background="new 796 796 200 200"
+							xml:space="preserve"
+							class="testimonial-card__user-icon"
+						>
+							<path
+								d="M896,796c-55.14,0-99.999,44.86-99.999,100c0,55.141,44.859,100,99.999,100c55.141,0,99.999-44.859,99.999-100
+				 C995.999,840.86,951.141,796,896,796z M896.639,827.425c20.538,0,37.189,19.66,37.189,43.921c0,24.257-16.651,43.924-37.189,43.924
+				 s-37.187-19.667-37.187-43.924C859.452,847.085,876.101,827.425,896.639,827.425z M896,983.86
+				 c-24.692,0-47.038-10.239-63.016-26.695c-2.266-2.335-2.984-5.775-1.84-8.82c5.47-14.556,15.718-26.762,28.817-34.761
+				 c2.828-1.728,6.449-1.393,8.91,0.828c7.706,6.958,17.316,11.114,27.767,11.114c10.249,0,19.69-4.001,27.318-10.719
+				 c2.488-2.191,6.128-2.479,8.932-0.711c12.697,8.004,22.618,20.005,27.967,34.253c1.144,3.047,0.425,6.482-1.842,8.817
+				 C943.037,973.621,920.691,983.86,896,983.86z"
+							/>
+						</svg>
+					</div>
+					<div class="testimonial-card__content">
+						<h3 class="testimonial-card__name">Анна Петрова</h3>
+						<p class="testimonial-card__text">
+							"Незабываемый отдых в Ибице! Прекрасные пляжи, отличный сервис и
+							потрясающая атмосфера. Обязательно вернемся сюда снова!"
+						</p>
+						<div class="testimonial-card__rating">★★★★★</div>
+					</div>
+				</div>
+				<div class="testimonial-card">
+					<div class="testimonial-card__image2">
+						<svg
+							fill="#000000"
+							version="1.1"
+							id="Layer_1"
+							xmlns="http://www.w3.org/2000/svg"
+							xmlns:xlink="http://www.w3.org/1999/xlink"
+							width="800px"
+							height="800px"
+							viewBox="796 796 200 200"
+							enable-background="new 796 796 200 200"
+							xml:space="preserve"
+							class="testimonial-card__user-icon"
+						>
+							<path
+								d="M896,796c-55.14,0-99.999,44.86-99.999,100c0,55.141,44.859,100,99.999,100c55.141,0,99.999-44.859,99.999-100
+			 C995.999,840.86,951.141,796,896,796z M896.639,827.425c20.538,0,37.189,19.66,37.189,43.921c0,24.257-16.651,43.924-37.189,43.924
+			 s-37.187-19.667-37.187-43.924C859.452,847.085,876.101,827.425,896.639,827.425z M896,983.86
+			 c-24.692,0-47.038-10.239-63.016-26.695c-2.266-2.335-2.984-5.775-1.84-8.82c5.47-14.556,15.718-26.762,28.817-34.761
+			 c2.828-1.728,6.449-1.393,8.91,0.828c7.706,6.958,17.316,11.114,27.767,11.114c10.249,0,19.69-4.001,27.318-10.719
+			 c2.488-2.191,6.128-2.479,8.932-0.711c12.697,8.004,22.618,20.005,27.967,34.253c1.144,3.047,0.425,6.482-1.842,8.817
+			 C943.037,973.621,920.691,983.86,896,983.86z"
+							/>
+						</svg>
+					</div>
+					<div class="testimonial-card__content">
+						<h3 class="testimonial-card__name">Михаил Иванов</h3>
+						<p class="testimonial-card__text">
+							"Тенерифе превзошел все ожидания. Потрясающие виды, комфортный
+							климат и множество развлечений. Рекомендую всем!"
+						</p>
+						<div class="testimonial-card__rating">★★★★★</div>
+					</div>
+				</div>
+				<div class="testimonial-card">
+					<div class="testimonial-card__image3">
+						<svg
+							fill="#000000"
+							version="1.1"
+							id="Layer_1"
+							xmlns="http://www.w3.org/2000/svg"
+							xmlns:xlink="http://www.w3.org/1999/xlink"
+							width="800px"
+							height="800px"
+							viewBox="796 796 200 200"
+							enable-background="new 796 796 200 200"
+							xml:space="preserve"
+							class="testimonial-card__user-icon"
+						>
+							<path
+								d="M896,796c-55.14,0-99.999,44.86-99.999,100c0,55.141,44.859,100,99.999,100c55.141,0,99.999-44.859,99.999-100
+				 C995.999,840.86,951.141,796,896,796z M896.639,827.425c20.538,0,37.189,19.66,37.189,43.921c0,24.257-16.651,43.924-37.189,43.924
+				 s-37.187-19.667-37.187-43.924C859.452,847.085,876.101,827.425,896.639,827.425z M896,983.86
+				 c-24.692,0-47.038-10.239-63.016-26.695c-2.266-2.335-2.984-5.775-1.84-8.82c5.47-14.556,15.718-26.762,28.817-34.761
+				 c2.828-1.728,6.449-1.393,8.91,0.828c7.706,6.958,17.316,11.114,27.767,11.114c10.249,0,19.69-4.001,27.318-10.719
+				 c2.488-2.191,6.128-2.479,8.932-0.711c12.697,8.004,22.618,20.005,27.967,34.253c1.144,3.047,0.425,6.482-1.842,8.817
+				 C943.037,973.621,920.691,983.86,896,983.86z"
+							/>
+						</svg>
+					</div>
+					<div class="testimonial-card__content">
+						<h3 class="testimonial-card__name">Елена Смирнова</h3>
+						<p class="testimonial-card__text">
+							"Майорка - это рай на земле! Чистые пляжи, кристальная вода и
+							дружелюбные местные жители. Идеальное место для отдыха."
+						</p>
+						<div class="testimonial-card__rating">★★★★★</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<footer id="contacts" class="footer">
+			<div class="footer__background"></div>
+			<div class="footer__content">
+				<div class="footer__column">
+					<div class="footer__label">Email</div>
+					<div class="footer__label">Contact</div>
+					<div class="footer__label">Our villas</div>
+				</div>
+				<div class="footer__column">
+					<div class="footer__value">spainresortsss@gmail.com</div>
+					<div class="footer__value">+375 (29) 123 45 67</div>
+					<div class="footer__value">Spain</div>
+				</div>
+				<div class="footer__social">
+					<a href="https://www.instagram.com/belstu.official/">
+						<div class="footer__icon1"></div>
+					</a>
+					<a href="https://t.me/s/TLGRM_belstuby">
+						<div class="footer__icon2"></div>
+					</a>
+					<a href="https://vk.com/belstu.official">
+						<div class="footer__icon3"></div>
+					</a>
+				</div>
+			</div>
+		</footer>
+		<script src="js/burger-menu.js"></script>
+		<script>
+			document.addEventListener('DOMContentLoaded', function () {
+				const options = { root: null, rootMargin: '0px', threshold: 0.1 }
+				const observer = new IntersectionObserver((entries, obs) => {
+					entries.forEach(entry => {
+						if (!entry.isIntersecting) return
+						const el = entry.target
+
+						el.style.visibility = 'visible'
+
+						if (
+							el.classList.contains('whyspain-img3') ||
+							el.classList.contains('whyspain-img1')
+						) {
+							el.classList.add('slide-in-left')
+						}
+
+						if (
+							el.classList.contains('popular-resorts__title') ||
+							el.classList.contains('why-spain__feature-text') ||
+							el.classList.contains('whyspain-title') ||
+							el.classList.contains('whyspain-img2') ||
+							el.classList.contains('whyspain-text')
+						) {
+							el.classList.add('slide-in-up')
+						}
+
+						obs.unobserve(el)
+					})
+				}, options)
+
+				document
+					.querySelectorAll(
+						'.why-spain__feature-text, .why-spain__feature-image, ' +
+							'.whyspain-img2, .whyspain-img1, .whyspain-title, .whyspain-text, .popular-resorts__title, .whyspain-img3'
+					)
+					.forEach(el => {
+						el.style.opacity = 0
+						el.style.visibility = 'hidden'
+						observer.observe(el)
+					})
+
+				const image2 = document.querySelector('.whyspain-img3')
+				if (image2) {
+					image2.style.opacity = 0
+					image2.style.visibility = 'hidden'
+
+					window.addEventListener('scroll', () => {
+						const scrollPosition = window.scrollY || window.pageYOffset
+						const scrollThreshold = document.body.scrollHeight * 0.1
+
+						if (scrollPosition >= scrollThreshold) {
+							image2.style.visibility = 'visible'
+							image2.classList.add('slide-in-left')
+							window.removeEventListener('scroll', arguments.callee)
+						}
+					})
+				}
+
+				const sliderTrack = document.querySelector('.slider-track')
+				const images = document.querySelectorAll('.why-spain__gallery-image')
+				const prevButton = document.querySelector('.gallery-arrow--left')
+				const nextButton = document.querySelector('.gallery-arrow--right')
+				let currentIndex = 0
+
+				function updateSlider() {
+					const offset = -currentIndex * 100
+					sliderTrack.style.transform = `translateX(${offset}%)`
+				}
+
+				prevButton.addEventListener('click', () => {
+					currentIndex = (currentIndex - 1 + images.length) % images.length
+					updateSlider()
+				})
+
+				nextButton.addEventListener('click', () => {
+					currentIndex = (currentIndex + 1) % images.length
+					updateSlider()
+				})
+
+				updateSlider()
+			})
+
+			document.addEventListener('DOMContentLoaded', function () {
+				fetch('/xml/images.xml')
+					.then(response => response.text())
+					.then(str => new window.DOMParser().parseFromString(str, 'text/xml'))
+					.then(data => {
+						const images = data.getElementsByTagName('image')
+						for (let i = 0; i < images.length; i++) {
+							const className = images[i].getAttribute('class')
+							const imageUrl = images[i].textContent.trim()
+							const element = document.querySelector(`.${className}`)
+							if (element) {
+								element.style.backgroundImage = `url('${imageUrl}')`
+								element.style.backgroundRepeat = 'no-repeat'
+								element.style.backgroundPosition = 'center'
+								element.style.backgroundSize = 'cover'
+							}
+						}
+					})
+					.catch(error => console.error('Ошибка загрузки XML:', error))
+			})
+		</script>
+	</body>
+</html>

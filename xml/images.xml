@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<images>
+<!-- main -->
+  <image class="why-spain__image">image/image.jpg</image>
+  <image class="why-spain__image2">image/image12.jpg</image>
+  <image class="why-spain__image3">image/image13.jpg</image>
+   <image class="resort-card__image">image/image4.jpeg</image>
+    <image class="resort-card__image2">image/image3.jpg</image>
+     <image class="resort-card__image3">image/image2.jpg</image>
+     <image class="footer__icon1">image/Social Icons.svg</image>
+     <image class="footer__icon2">image/Social Icons-1.svg</image>
+     <image class="footer__icon3">image/Social Icons-2.svg</image>
+          <image class="hero__background">image/main.jpg</image>
+          <!-- tenerife -->
+          <image class="tenerife-gallery-image1">image/tenerife1.jpg</image>
+          <image class="tenerife-gallery-image2">image/tenerife2.jpg</image>
+          <image class="tenerife-gallery-image3">image/tenerife3.jpg</image>
+          <image class="tenerife-hotel-image-group6">image/image65.png</image>
+          <image class="tenerife-hotel-image-group4">image/image55.png</image>
+          <image class="tenerife-hotel-image-group5">image/image54.png</image>
+          <!-- ibiza -->
+          <image class="ibiza-gallery-image1">image/image 21.jpg</image>
+          <image class="ibiza-gallery-image2">image/image 18.jpg</image>
+          <image class="ibiza-gallery-image3">image/image 19.png</image>
+          <image class="ibiza-hotel-image-group6">image/image 24.png</image>
+          <image class="ibiza-hotel-image-group4">image/image 22.png</image>
+          <image class="ibiza-hotel-image-group5">image/image 25.png</image>
+          <!-- mayorka -->
+          <image class="mayorka-gallery-image1">image/image53.png</image>
+          <image class="mayorka-gallery-image2">image/image33.png</image>
+          <image class="mayorka-gallery-image3">image/image43.png</image>
+          <image class="mayorka-hotel-image-group6">image/image73.png</image>
+          <image class="mayorka-hotel-image-group4">image/image74.png</image>
+          <image class="mayorka-hotel-image-group5">image/image78.png</image>
+</images>

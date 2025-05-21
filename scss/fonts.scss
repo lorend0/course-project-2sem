@@ -1,0 +1,38 @@
+@font-face {
+	font-family: 'GothaPro';
+	src: url('../fonts/GothaProLig.otf') format('opentype');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'GothaPro';
+	src: url('../fonts/GothaProMed.otf') format('opentype');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'GothaPro';
+	src: url('../fonts/GothaProBol.otf') format('opentype');
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'GothaPro';
+	src: url('../fonts/GothaProBla.otf') format('opentype');
+	font-weight: 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+* {
+	font-family: 'GothaPro', Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+}

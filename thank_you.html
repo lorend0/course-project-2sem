@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Заказ успешно отправлен</title>
+		<link rel="stylesheet" href="css/thank.css" />
+	</head>
+	<body>
+		<div class="container">
+			<div class="success-card">
+				<div class="success-icon">
+					<span class="checkmark">✓</span>
+				</div>
+				<h1>Спасибо за ваш заказ!</h1>
+				<p>
+					Ваша заявка успешно отправлена и принята в обработку. Мы свяжемся с
+					вами в ближайшее время для подтверждения деталей бронирования.
+				</p>
+				<p>
+					Номер вашего заказа: <strong id="orderNumber">ORDER-123456</strong>
+				</p>
+				<a href="main.html" class="button">Вернуться на главную</a>
+			</div>
+		</div>
+
+		<script>
+			document.addEventListener('DOMContentLoaded', function () {
+				function generateOrderNumber() {
+					const prefix = 'ORDER-'
+					const randomNum = Math.floor(100000 + Math.random() * 900000)
+					return prefix + randomNum
+				}
+
+				document.getElementById('orderNumber').textContent =
+					generateOrderNumber()
+
+				const urlParams = new URLSearchParams(window.location.search)
+				const resort = urlParams.get('resort')
+
+				if (resort) {
+					let resortName
+					switch (resort) {
+						case 'ibiza':
+							resortName = 'Ибица'
+							break
+						case 'tenerife':
+							resortName = 'Тенерифе'
+							break
+						case 'mallorca':
+							resortName = 'Майорка'
+							break
+						default:
+							resortName = resort
+					}
+
+					const messageEl = document.querySelector(
+						'.success-card p:first-of-type'
+					)
+					messageEl.innerHTML = `
+	Ваша заявка на курорт <strong>${resortName}</strong> успешно отправлена и принята в обработку.
+						Мы свяжемся с вами в ближайшее время для подтверждения деталей бронирования.
+					`
+				}
+			})
+		</script>
+	</body>
+</html>

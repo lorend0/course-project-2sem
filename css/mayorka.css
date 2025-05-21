@@ -1,0 +1,666 @@
+@import url('fonts.css');
+
+:root {
+	--container-padding: 0px;
+	--header-height: 60px;
+}
+
+.container {
+	width: 100%;
+	max-width: 1440px;
+	margin: 0 auto;
+	padding: 0 var(--container-padding);
+}
+
+@media (max-width: 1440px) {
+	:root {
+		--container-padding: 15px;
+	}
+}
+
+@media (max-width: 1024px) {
+	:root {
+		--container-padding: 10px;
+	}
+}
+
+@media (max-width: 768px) {
+	:root {
+		--container-padding: 15px;
+	}
+}
+
+@media (max-width: 480px) {
+	:root {
+		--container-padding: 10px;
+	}
+}
+
+html {
+	scroll-behavior: smooth;
+	overflow-x: hidden;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'GothaPro', Arial, sans-serif;
+	font-weight: 400;
+}
+body {
+	margin: 0;
+	font-family: 'GothaPro', Arial, sans-serif;
+	background: linear-gradient(135deg, #fff5e6 0%, #fff9f0 50%, #fff7eb 100%);
+	color: #000;
+	opacity: 1;
+	transition: opacity 0.3s ease-in-out;
+}
+
+@keyframes slide-in-left {
+	from {
+		transform: translateX(-500%);
+		opacity: 1;
+	}
+	to {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+@keyframes slide-in-right {
+	from {
+		transform: translateX(500%);
+		opacity: 1;
+	}
+	to {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+.header {
+	padding: 0 var(--container-padding);
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: var(--header-height);
+	background-color: rgba(255, 245, 230, 0.95);
+	backdrop-filter: blur(10px);
+	z-index: 1000;
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.048);
+}
+.header__content {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 100%;
+}
+.header__logo {
+	width: 118px;
+	height: 60px;
+	background: url('/image/logo2.svg') no-repeat center/contain;
+}
+
+.header__nav {
+	display: flex;
+	align-items: center;
+}
+
+.header__menu-toggle {
+	display: none;
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 10px;
+	z-index: 1001;
+}
+.header__menu-toggle span {
+	display: block;
+	width: 25px;
+	height: 2px;
+	background-color: black;
+	margin: 5px 0;
+	transition: 0.3s;
+}
+
+.header__nav-links {
+	display: flex;
+	gap: 28px;
+}
+
+.header__link {
+	font-size: 16px;
+	font-weight: 400;
+	color: #412d27;
+	text-decoration: none;
+	transition: color 0.3s;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	font-family: 'GothaPro', Arial, sans-serif;
+}
+
+.header__link:hover {
+	color: #8d6e63;
+}
+
+@media (max-width: 768px) {
+	.header__menu-toggle {
+		display: block;
+	}
+
+	.header__nav-links {
+		position: fixed;
+		top: 0;
+		right: -100%;
+		width: 100%;
+		height: 100vh;
+		background: rgba(255, 255, 255, 0.98);
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		transition: 0.3s;
+		z-index: 1000;
+		gap: 40px;
+	}
+
+	.header__nav-links.active {
+		right: 0;
+	}
+
+	.header__link {
+		font-size: 24px;
+		font-weight: 400;
+	}
+
+	.header__menu-toggle.active span:nth-child(1) {
+		transform: rotate(45deg) translate(5px, 5px);
+	}
+
+	.header__menu-toggle.active span:nth-child(2) {
+		opacity: 0;
+	}
+
+	.header__menu-toggle.active span:nth-child(3) {
+		transform: rotate(-45deg) translate(5px, -5px);
+	}
+}
+
+.mayorka-gallery-image1,
+.mayorka-gallery-image2,
+.mayorka-gallery-image3 {
+	opacity: 0;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease-out;
+}
+
+.mayorka-gallery-image3 {
+	animation-name: slide-in-left;
+	animation-duration: 0.5s;
+	animation-delay: 0.2s;
+}
+
+.mayorka-gallery-image2 {
+	animation-name: slide-in-left;
+	animation-duration: 0.5s;
+	animation-delay: 0.1s;
+}
+
+.mayorka-gallery-image1 {
+	animation-name: slide-in-right;
+	animation-duration: 0.5s;
+	animation-delay: 0.3s;
+}
+.mayorka-hero {
+	height: 700px;
+	max-width: 1200px;
+	width: 100%;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 50px;
+}
+.mayorka-title {
+	position: static;
+	font-size: 45px;
+	color: #412d27;
+	font-family: 'GothaPro', Arial, sans-serif;
+	font-weight: 700;
+	line-height: 72px;
+	margin-top: 90px;
+	margin-right: 470px;
+}
+.mayorka-gallery {
+	margin-top: -150px;
+	display: flex;
+	gap: 25px;
+	position: static;
+	justify-content: center;
+	align-items: flex-start;
+	width: 100%;
+}
+.mayorka-gallery-left {
+	display: flex;
+	flex-direction: column;
+	margin-top: 200px;
+	align-items: flex-start;
+}
+.mayorka-gallery-image1 {
+	width: 250px;
+	height: 250px;
+	border-radius: 30px;
+	object-fit: cover;
+}
+.mayorka-gallery-image2 {
+	width: 600px;
+	height: 255px;
+	border-radius: 30px;
+	object-fit: cover;
+}
+.mayorka-gallery-image3 {
+	width: 875px;
+	height: 192px;
+	border-radius: 30px;
+	object-fit: cover;
+}
+.mayorka-welcome {
+	position: relative;
+	bottom: -5px;
+	font-size: 40px;
+	line-height: 72px;
+	color: #412d27;
+	font-family: 'GothaPro', Arial, sans-serif;
+	font-weight: 700;
+	text-align: center;
+	margin-bottom: 150px;
+}
+.mayorka-hotels-title {
+	margin-top: -10px;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	color: #fff;
+	width: 100vw;
+	padding: 60px 0;
+	margin-left: 0;
+	margin-right: 0;
+	margin-bottom: 80px;
+	font-size: 80px;
+	font-family: 'GothaPro', Arial, sans-serif;
+	font-weight: 700;
+	text-align: center;
+	box-sizing: border-box;
+	z-index: 2;
+}
+.mayorka-hotel-card--group6,
+.mayorka-hotel-card--group4,
+.mayorka-hotel-card--group5 {
+	width: 703px;
+	height: 418px;
+	border-radius: 20px;
+	overflow: hidden;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	margin-bottom: 10px;
+	background: none;
+	transition: all 0.3s ease;
+	cursor: pointer;
+}
+
+.mayorka-hotel-card--group6:hover .mayorka-hotel-info,
+.mayorka-hotel-card--group4:hover .mayorka-hotel-info,
+.mayorka-hotel-card--group5:hover .mayorka-hotel-info {
+	transform: translateY(0);
+	opacity: 1;
+}
+
+.mayorka-hotel-info {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.85);
+	padding: 20px;
+	transform: translateY(100%);
+	transition: all 0.3s ease;
+	opacity: 0;
+	z-index: 4;
+}
+
+.mayorka-hotel-price {
+	color: #fff;
+	font-size: 24px;
+	font-weight: 700;
+	margin-bottom: 10px;
+	font-family: 'GothaPro', Arial, sans-serif;
+}
+
+.mayorka-hotel-description {
+	color: #fff;
+	font-size: 14px;
+	line-height: 1.4;
+	font-weight: 300;
+	margin-bottom: 15px;
+	font-family: 'GothaPro', Arial, sans-serif;
+}
+
+.mayorka-hotel-features {
+	display: flex;
+	gap: 15px;
+	margin-bottom: 15px;
+}
+
+.mayorka-hotel-feature {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	color: #fff;
+	font-size: 12px;
+	font-weight: 300;
+}
+
+.mayorka-hotel-feature svg {
+	width: 16px;
+	height: 16px;
+	fill: #fff;
+}
+
+.mayorka-hotel-button {
+	background: #0061df;
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	font-size: 14px;
+	font-weight: 500;
+	cursor: pointer;
+	transition: background 0.3s ease;
+}
+
+.mayorka-hotel-button:hover {
+	background: #004bb3;
+}
+
+.resort-card__button:hover {
+	background-color: #fff;
+	color: #000;
+	font-weight: 500;
+}
+
+.resort-card:hover {
+	transform: scale(1.05);
+}
+.mayorka-hotel-image-group6,
+.mayorka-hotel-image-group4,
+.mayorka-hotel-image-group5 {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 20px;
+	z-index: 1;
+}
+.mayorka-hotel-gradient-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 100%);
+	opacity: 0.5;
+	border-radius: 20px;
+	z-index: 2;
+}
+.mayorka-hotel-content {
+	position: relative;
+	z-index: 3;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 0 0 33px 40px;
+}
+.mayorka-hotel-title-group6 {
+	font-size: 33px;
+	font-family: 'GothaPro', Arial, sans-serif;
+	font-weight: 500;
+	color: #fff;
+	margin-bottom: 13px;
+	line-height: 40px;
+	max-width: 80%;
+}
+.mayorka-hotel-address-group6 {
+	display: flex;
+	align-items: center;
+	font-size: 13px;
+	font-family: 'GothaPro', Arial, sans-serif;
+	font-weight: 500;
+	color: #fff;
+	background: none;
+	margin-top: 7px;
+}
+.mayorka-hotel-location-icon {
+	width: 17px;
+	height: 21px;
+	margin-right: 7px;
+}
+.popular-resorts {
+	position: relative;
+	margin-top: -60px;
+	margin-bottom: 150px;
+}
+.popular-resorts__cards {
+	flex-direction: column;
+	align-items: center;
+	gap: 40px;
+	display: flex;
+}
+.mayorka-gallery-bottom-row {
+	display: flex;
+	flex-direction: row;
+	gap: 25px;
+	margin-top: 23px;
+}
+.mayorka-hotels-bar-wrapper {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	margin-bottom: 10px;
+}
+.mayorka-hotels-bar {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 100vw;
+	height: 600px;
+	z-index: -1;
+	margin-top: -1180px;
+}
+a {
+	text-decoration: none;
+}
+/* Footer */
+.footer {
+	width: 100%;
+	padding: 50px var(--container-padding);
+	background: #023056;
+	color: #d5e7f4;
+}
+
+.footer__content {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 30px;
+	max-width: 1160px;
+	margin: 0 auto;
+}
+
+.footer__column {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.footer__label {
+	font-size: clamp(14px, 1.5vw, 18px);
+	font-weight: 100;
+}
+
+.footer__value {
+	font-size: clamp(14px, 1.5vw, 18px);
+	font-weight: 100;
+}
+
+.footer__social {
+	display: flex;
+	gap: 20px;
+	justify-content: center;
+	margin-top: 20px;
+}
+
+.footer__icon1,
+.footer__icon2,
+.footer__icon3 {
+	width: clamp(24px, 3vw, 30px);
+	height: clamp(24px, 3vw, 30px);
+	cursor: pointer;
+	transition: transform 0.3s ease;
+}
+
+.footer__icon1:hover,
+.footer__icon2:hover,
+.footer__icon3:hover {
+	transform: scale(1.1);
+}
+
+@media (min-width: 768px) {
+	.footer__content {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.footer__social {
+		margin-top: 0;
+		justify-content: flex-end;
+	}
+}
+
+@media (max-width: 768px) {
+	.footer {
+		padding: 30px 20px;
+	}
+
+	.footer__content {
+		grid-template-columns: 1fr;
+		gap: 20px;
+		text-align: center;
+	}
+
+	.footer__social {
+		justify-content: center;
+		margin-top: 20px;
+	}
+
+	.footer__label,
+	.footer__value {
+		font-size: 16px;
+	}
+
+	.mayorka-hero {
+		height: auto;
+		padding: 20px 0;
+		margin-bottom: 50px;
+	}
+
+	.mayorka-title {
+		font-size: 30px;
+		line-height: 1.2;
+		margin: 80px 20px 20px;
+		text-align: center;
+	}
+	.mayorka-welcome {
+		font-size: 24px;
+		line-height: 36px;
+
+		margin-bottom: 120px;
+		margin-top: -20px;
+	}
+
+	.mayorka-gallery {
+		flex-direction: column;
+		margin-top: 20px;
+		gap: 15px;
+	}
+
+	.mayorka-gallery-left {
+		margin-top: 0;
+		width: 100%;
+	}
+
+	.mayorka-gallery-image1,
+	.mayorka-gallery-image2,
+	.mayorka-gallery-image3 {
+		width: 90%;
+		height: auto;
+		aspect-ratio: 16/9;
+		margin: 0px 20px 0px 25px;
+	}
+
+	.mayorka-gallery-bottom-row {
+		flex-direction: column;
+		gap: 15px;
+	}
+
+	.mayorka-hotels-title {
+		font-size: 40px;
+		padding: 40px 0;
+		margin-bottom: 40px;
+	}
+
+	.mayorka-hotel-card--group6,
+	.mayorka-hotel-card--group4,
+	.mayorka-hotel-card--group5 {
+		width: 350px;
+		height: 300px;
+	}
+
+	.mayorka-hotel-info {
+		padding: 15px;
+	}
+
+	.mayorka-hotel-price {
+		font-size: 20px;
+	}
+
+	.mayorka-hotel-description {
+		font-size: 12px;
+	}
+
+	.mayorka-hotel-features {
+		gap: 10px;
+	}
+
+	.mayorka-hotel-feature {
+		font-size: 11px;
+	}
+
+	.mayorka-hotel-button {
+		padding: 8px 16px;
+		font-size: 12px;
+	}
+
+	.mayorka-hotels-bar {
+		height: 400px;
+		margin-top: -800px;
+	}
+
+	.popular-resorts__cards {
+		gap: 20px;
+	}
+}

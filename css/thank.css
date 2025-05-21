@@ -1,0 +1,89 @@
+@import url('fonts.css');
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: 'GothaPro', Arial, sans-serif;
+	font-weight: 400;
+}
+body {
+	background-color: aliceblue;
+	padding: 20px;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.container {
+	max-width: 800px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.success-card {
+	background-color: white;
+	border-radius: 10px;
+	padding: 40px;
+	margin-bottom: 20px;
+	border-top: 5px solid #00d607;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.success-icon {
+	width: 80px;
+	height: 80px;
+	background-color: #e8f5e9;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0 auto 20px;
+}
+
+.checkmark {
+	color: #00b406;
+	font-size: 40px;
+}
+
+h1 {
+	font-size: 24px;
+	margin-bottom: 15px;
+	color: #333;
+}
+
+p {
+	margin-bottom: 20px;
+	color: #666;
+	font-size: 16px;
+}
+.button {
+	background-color: #2368fd;
+	color: white;
+	border: none;
+	padding: 12px 24px;
+	border-radius: 10px;
+	cursor: pointer;
+	font-size: 16px;
+	transition: background-color 0.3s;
+	text-decoration: none;
+	display: inline-block;
+	margin-top: 10px;
+}
+.button:hover {
+	background-color: #1e4a6d;
+}
+
+.details {
+	margin-top: 30px;
+	border-top: 1px solid #ddd;
+	padding-top: 20px;
+	text-align: left;
+}
+
+.details h2 {
+	font-size: 18px;
+	margin-bottom: 15px;
+	color: #333;
+}

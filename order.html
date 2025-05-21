@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Регистрация заказа</title>
+		<link
+			rel="preload"
+			href="fonts/GothaProLig.otf"
+			as="font"
+			type="font/otf"
+			crossorigin
+		/>
+		<link
+			rel="preload"
+			href="fonts/GothaProMed.otf"
+			as="font"
+			type="font/otf"
+			crossorigin
+		/>
+		<link
+			rel="preload"
+			href="fonts/GothaProBol.otf"
+			as="font"
+			type="font/otf"
+			crossorigin
+		/>
+		<link rel="stylesheet" href="css/order.css" />
+		<link rel="shortcut icon" href="image/logovkladka.png" />
+		<style>
+			html {
+				overflow-x: hidden;
+			}
+		</style>
+		<script
+			type="text/javascript"
+			src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+		></script>
+		<script>
+			document.addEventListener('DOMContentLoaded', function () {
+				emailjs.init('YVd0jiyX0eDAEdClG')
+			})
+		</script>
+	</head>
+	<body>
+		<header class="header">
+			<div class="header__content">
+				<a href="main.html">
+					<div class="header__logo"></div>
+				</a>
+				<nav class="header__nav">
+					<button class="header__menu-toggle" aria-label="Toggle menu">
+						<span></span>
+						<span></span>
+						<span></span>
+					</button>
+					<div class="header__nav-links">
+						<a href="main.html" class="header__link">ГЛАВНАЯ</a>
+						<a href="main.html#resorts" class="header__link">КУРОРТЫ</a>
+						<a href="main.html#contacts" class="header__link">ОТЗЫВЫ</a>
+					</div>
+				</nav>
+			</div>
+		</header>
+		<div class="container">
+			<h1>Регистрация заказа</h1>
+			<p>
+				Пожалуйста, заполните форму ниже, чтобы завершить оформление заказа.
+			</p>
+
+			<form id="orderForm" autocomplete="off">
+				<div class="form-section">
+					<h2>Личные данные</h2>
+					<div class="form-group">
+						<label for="firstName">Имя</label>
+						<input type="text" id="firstName" name="firstName" required />
+						<div class="error" id="firstNameError">Пожалуйста, введите имя</div>
+					</div>
+					<div class="form-group">
+						<label for="lastName">Фамилия</label>
+						<input type="text" id="lastName" name="lastName" required />
+						<div class="error" id="lastNameError">
+							Пожалуйста, введите фамилию
+						</div>
+					</div>
+				</div>
+
+				<div class="form-section">
+					<h2>Контактная информация</h2>
+					<div class="form-group">
+						<label for="email">Email</label>
+						<input type="email" id="email" name="email" required />
+						<div class="error" id="emailError">
+							Пожалуйста, введите корректный email
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="phone">Телефон</label>
+						<input type="tel" id="phone" name="phone" required />
+						<div class="error" id="phoneError">
+							Пожалуйста, введите номер телефона
+						</div>
+					</div>
+				</div>
+
+				<div class="form-section">
+					<h2>Информация о заселении</h2>
+					<div class="form-group">
+						<label for="resort">Курорт</label>
+						<select id="resort" name="resort" required>
+							<option value="" disabled selected>Выберите курорт</option>
+							<option value="ibiza">Ибица</option>
+							<option value="tenerife">Тенерифе</option>
+							<option value="mallorca">Майорка</option>
+						</select>
+						<div class="error" id="resortError">
+							Пожалуйста, выберите курорт
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="guestCount">Количество заселяющихся</label>
+						<input
+							type="number"
+							id="guestCount"
+							name="guestCount"
+							min="1"
+							required
+						/>
+						<div class="error" id="guestCountError">
+							Укажите количество гостей
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="checkInDate">Дата заезда</label>
+						<input type="date" id="checkInDate" name="checkInDate" required />
+						<div class="error" id="checkInDateError">Выберите дату заезда</div>
+					</div>
+					<div class="form-group">
+						<label for="checkOutDate">Дата отъезда</label>
+						<input type="date" id="checkOutDate" name="checkOutDate" required />
+						<div class="error" id="checkOutDateError">
+							Выберите дату отъезда
+						</div>
+					</div>
+				</div>
+				<button type="submit" id="submitButton">Отправить</button>
+			</form>
+		</div>
+		<footer id="contacts" class="footer">
+			<div class="footer__background"></div>
+			<div class="footer__content">
+				<div class="footer__column">
+					<div class="footer__label">Email</div>
+					<div class="footer__label">Contact</div>
+					<div class="footer__label">Our villas</div>
+				</div>
+				<div class="footer__column">
+					<div class="footer__value">spainresortsss@gmail.com</div>
+					<div class="footer__value">+375 (29) 123 45 67</div>
+					<div class="footer__value">Spain</div>
+				</div>
+				<div class="footer__social">
+					<a href="https://www.instagram.com/belstu.official/">
+						<div class="footer__icon1"></div>
+					</a>
+					<a href="https://t.me/s/TLGRM_belstuby">
+						<div class="footer__icon2"></div>
+					</a>
+					<a href="https://vk.com/belstu.official">
+						<div class="footer__icon3"></div>
+					</a>
+				</div>
+			</div>
+		</footer>
+		<script src="js/burger-menu.js"></script>
+		<script>
+			document.addEventListener('DOMContentLoaded', function () {
+				const today = new Date()
+				const todayFormatted = today.toISOString().split('T')[0]
+
+				const checkInDateInput = document.getElementById('checkInDate')
+				const checkOutDateInput = document.getElementById('checkOutDate')
+
+				checkInDateInput.min = todayFormatted
+				checkOutDateInput.min = todayFormatted
+
+				checkInDateInput.addEventListener('change', function () {
+					checkOutDateInput.min = checkInDateInput.value
+					if (
+						checkOutDateInput.value &&
+						new Date(checkOutDateInput.value) < new Date(checkInDateInput.value)
+					) {
+						checkOutDateInput.value = checkInDateInput.value
+					}
+				})
+
+				const orderForm = document.getElementById('orderForm')
+
+				orderForm.addEventListener('submit', function (e) {
+					e.preventDefault()
+					if (!validateForm()) {
+						return false
+					}
+
+					const form = e.target
+					const templateParams = {
+						to_email: form.email.value,
+						firstName: form.firstName.value,
+						lastName: form.lastName.value,
+						resort: form.resort.value,
+						guestCount: form.guestCount.value,
+						checkInDate: form.checkInDate.value,
+						checkOutDate: form.checkOutDate.value,
+					}
+
+					emailjs
+						.send('service_nglk0mh', 'template_fpi0aqc', templateParams)
+						.then(
+							function (response) {
+								window.location.href = 'thank_you.html'
+							},
+							function (error) {
+								alert('Ошибка при отправке: ' + error.text)
+							}
+						)
+				})
+
+				function validateForm() {
+					let isValid = true
+
+					if (!document.getElementById('firstName').value.trim()) {
+						document.getElementById('firstNameError').style.display = 'block'
+						isValid = false
+					} else {
+						document.getElementById('firstNameError').style.display = 'none'
+					}
+
+					if (!document.getElementById('lastName').value.trim()) {
+						document.getElementById('lastNameError').style.display = 'block'
+						isValid = false
+					} else {
+						document.getElementById('lastNameError').style.display = 'none'
+					}
+
+					const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+					const emailValue = document.getElementById('email').value.trim()
+					if (!emailValue || !emailRegex.test(emailValue)) {
+						document.getElementById('emailError').style.display = 'block'
+						isValid = false
+					} else {
+						document.getElementById('emailError').style.display = 'none'
+					}
+
+					if (!document.getElementById('phone').value.trim()) {
+						document.getElementById('phoneError').style.display = 'block'
+						isValid = false
+					} else {
+						document.getElementById('phoneError').style.display = 'none'
+					}
+
+					if (!document.getElementById('resort').value) {
+						document.getElementById('resortError').style.display = 'block'
+						isValid = false
+					} else {
+						document.getElementById('resortError').style.display = 'none'
+					}
+
+					const guestCount = document.getElementById('guestCount').value
+					if (!guestCount || guestCount < 1) {
+						document.getElementById('guestCountError').style.display = 'block'
+						isValid = false
+					} else {
+						document.getElementById('guestCountError').style.display = 'none'
+					}
+
+					if (!document.getElementById('checkInDate').value) {
+						document.getElementById('checkInDateError').style.display = 'block'
+						isValid = false
+					} else {
+						document.getElementById('checkInDateError').style.display = 'none'
+					}
+
+					if (!document.getElementById('checkOutDate').value) {
+						document.getElementById('checkOutDateError').style.display = 'block'
+						isValid = false
+					} else {
+						document.getElementById('checkOutDateError').style.display = 'none'
+					}
+
+					return isValid
+				}
+
+				fetch('/xml/images.xml')
+					.then(response => response.text())
+					.then(str => new window.DOMParser().parseFromString(str, 'text/xml'))
+					.then(data => {
+						const images = data.getElementsByTagName('image')
+						for (let i = 0; i < images.length; i++) {
+							const className = images[i].getAttribute('class')
+							const imageUrl = images[i].textContent.trim()
+							const element = document.querySelector(`.${className}`)
+							if (element) {
+								element.style.backgroundImage = `url('${imageUrl}')`
+								element.style.backgroundRepeat = 'no-repeat'
+								element.style.backgroundPosition = 'center'
+								element.style.backgroundSize = 'cover'
+							}
+						}
+					})
+					.catch(error => console.error('Ошибка загрузки XML:', error))
+			})
+		</script>
+	</body>
+</html>
